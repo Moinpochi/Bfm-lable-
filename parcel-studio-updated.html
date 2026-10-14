@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Parcel Studio — Shipping Labels</title>
+<style>
+:root{--ink:#17202b;--muted:#718096;--line:#e7ebf0;--paper:#fff;--bg:#f4f6f9;--accent:#2563eb;--accent2:#eaf1ff;--green:#12805c;--shadow:0 12px 34px rgba(25,38,60,.07)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.45 Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select,textarea{font:inherit}button{cursor:pointer}.app{min-height:100vh;display:grid;grid-template-columns:240px minmax(0,1fr)}.sidebar{background:#111b2c;color:#eaf0fa;padding:24px 16px;display:flex;flex-direction:column;gap:24px}.brand{display:flex;align-items:center;gap:11px;padding:0 8px}.brand-mark{width:40px;height:40px;border-radius:13px;background:#fff;display:grid;place-items:center;overflow:hidden;flex:none}.brand-mark img{width:100%;height:100%;object-fit:contain}.brand-mark .fallback{font-weight:900;color:#1e40af;font-size:19px}.brand-name{font-size:16px;font-weight:800;letter-spacing:-.3px}.brand-sub{font-size:11px;color:#9aabc3;margin-top:2px}.nav-label{font-size:10px;text-transform:uppercase;letter-spacing:1.5px;color:#8090a9;padding:0 12px;margin-bottom:6px}.nav{display:grid;gap:5px}.nav button{border:0;color:#bac6d8;background:transparent;text-align:left;padding:11px 12px;border-radius:10px;display:flex;align-items:center;gap:11px}.nav button.active,.nav button:hover{background:#24324a;color:white}.nav .ico{width:20px;text-align:center;font-size:16px}.side-bottom{margin-top:auto;border-top:1px solid #2a3549;padding:16px 10px 0;color:#95a4bb;font-size:12px}.main{min-width:0}.topbar{height:76px;background:#fff;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 32px;gap:20px}.crumb{color:var(--muted);font-size:12px}.topbar h1{font-size:20px;margin:2px 0 0;letter-spacing:-.5px}.top-actions{display:flex;align-items:center;gap:10px}.avatar{height:34px;width:34px;border-radius:50%;background:#e8efff;color:#2148a7;display:grid;place-items:center;font-weight:800}.content{padding:28px 32px 48px;max-width:1500px;margin:auto}.view{display:none}.view.active{display:block}.hero{background:linear-gradient(115deg,#172d55,#2456a6);border-radius:18px;color:#fff;padding:28px 30px;display:flex;align-items:center;justify-content:space-between;gap:24px;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:270px;height:270px;border:1px solid #ffffff24;border-radius:50%;right:100px;top:-150px;box-shadow:0 0 0 32px #ffffff08,0 0 0 65px #ffffff06}.hero-copy{position:relative;z-index:1}.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:1.6px;color:#bbd0ff;font-weight:700}.hero h2{font-size:27px;letter-spacing:-.8px;margin:9px 0 7px}.hero p{margin:0;color:#d4e0f7;max-width:520px}.hero-logo{width:92px;height:92px;border-radius:20px;background:#fff;display:grid;place-items:center;overflow:hidden;position:relative;z-index:1;flex:none}.hero-logo img{width:100%;height:100%;object-fit:contain}.hero-logo .fallback{font-size:27px;font-weight:900;color:#1d4ed8}.row{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.between{justify-content:space-between}.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px;margin:22px 0}.stat,.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:19px;box-shadow:0 2px 8px #14213d03}.stat-label{font-size:12px;color:var(--muted)}.stat-value{font-size:27px;font-weight:800;letter-spacing:-.8px;margin:7px 0 2px}.stat-note{font-size:11px;color:var(--green)}.section-title{font-size:16px;margin:0;font-weight:800;letter-spacing:-.3px}.subtext{color:var(--muted);font-size:12px;margin-top:4px}.panel-head{display:flex;justify-content:space-between;align-items:center;gap:14px;margin-bottom:18px}.btn{border:1px solid #dce2ea;background:#fff;color:#243044;padding:9px 13px;border-radius:9px;font-weight:700;font-size:12px;display:inline-flex;align-items:center;justify-content:center;gap:7px}.btn:hover{background:#f7f9fc}.btn.primary{background:var(--accent);color:#fff;border-color:var(--accent)}.btn.dark{background:#172238;color:#fff;border-color:#172238}.btn.danger{color:#b42318;border-color:#f1c8c5}.btn.small{padding:6px 9px;font-size:11px}.btn:disabled{opacity:.45;cursor:not-allowed}.table-wrap{overflow:auto}table{width:100%;border-collapse:collapse;min-width:760px}th{text-align:left;color:#8390a2;text-transform:uppercase;font-size:10px;letter-spacing:1px;font-weight:800;padding:11px 12px;border-bottom:1px solid var(--line)}td{padding:13px 12px;border-bottom:1px solid #eff2f6;font-size:12px;vertical-align:middle}tr:last-child td{border-bottom:0}.pill{display:inline-flex;padding:4px 8px;border-radius:99px;background:#edf2ff;color:#2850ad;font-size:10px;font-weight:800}.pill.cod{background:#fff2df;color:#925500}.pill.prepaid{background:#e5f7ef;color:#08754d}.empty{padding:35px;text-align:center;color:var(--muted)}.form-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.field{display:grid;gap:6px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#657286;font-weight:800}.field input,.field select,.field textarea{width:100%;padding:10px 11px;border:1px solid #dce2ea;border-radius:9px;background:#fff;outline:none;color:var(--ink)}.field input:focus,.field select:focus,.field textarea:focus{border-color:#7aa2ff;box-shadow:0 0 0 3px #dce8ff}.field textarea{min-height:70px;resize:vertical}.split{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:18px}.toolbar{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.toolbar input,.toolbar select{padding:9px 10px;border:1px solid #dce2ea;border-radius:9px;background:#fff}.label-preview-area{background:#e9edf3;border:1px dashed #c7d0dd;border-radius:14px;padding:18px;display:flex;align-items:center;justify-content:center;min-height:460px;overflow:hidden}.label{width:100%;max-width:420px;background:#fff;border:1px solid #d9dfe8;padding:20px;color:#111827;box-shadow:0 8px 24px #16274414;position:relative;font-family:Arial,Helvetica,sans-serif}.label-top{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:2px solid #17202b;padding-bottom:12px;margin-bottom:12px}.label-logo{width:54px;height:42px;display:grid;place-items:center;overflow:hidden;flex:none}.label-logo img{max-width:100%;max-height:100%;object-fit:contain}.label-logo .fallback{font-size:17px;font-weight:900;color:var(--accent)}.sender{font-size:10px;color:#4b5563;text-align:right;white-space:pre-line}.ship-to{font-size:9px;text-transform:uppercase;letter-spacing:1.5px;color:#6b7280;font-weight:800;margin-bottom:5px}.recipient{font-size:22px;line-height:1.1;font-weight:900;overflow-wrap:anywhere}.address{font-size:14px;line-height:1.4;margin-top:7px;overflow-wrap:anywhere}.cityline{font-size:18px;font-weight:900;margin-top:7px;overflow-wrap:anywhere}.pin{font-size:25px;font-weight:900;letter-spacing:1.5px;margin-top:4px}.label-meta{display:flex;gap:7px;flex-wrap:wrap;margin-top:12px}.meta-chip{border:1px solid #d5d9e0;padding:4px 7px;font-size:10px;font-weight:800}.label-note{font-size:10px;margin-top:10px;border-top:1px dashed #c9ced7;padding-top:8px}.recipient-phone{font-size:11px;margin-top:4px}.meta-chip.cod-chip{background:#fff2df;border-color:#e7c98f}.meta-chip.cod-strong{background:#111;color:#fff;border-color:#111}.barcode{height:40px;margin-top:14px;display:flex;align-items:stretch;gap:2px;overflow:hidden}.barcode span{background:#101010;display:block}.barcode-caption{text-align:center;font:9px monospace;letter-spacing:2px;margin-top:4px}.label-footer{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #cfd4dc;margin-top:10px;padding-top:7px;font-size:9px;color:#4b5563}.setting-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.logo-upload{border:1px dashed #c5cfdd;border-radius:12px;padding:20px;display:flex;gap:16px;align-items:center}.logo-upload-preview{width:82px;height:82px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;overflow:hidden;background:#fff;flex:none}.logo-upload-preview img{width:100%;height:100%;object-fit:contain}.logo-upload-preview .fallback{font-size:24px;font-weight:900;color:var(--accent)}.hint{font-size:11px;color:var(--muted);line-height:1.55}.notice{background:#f0f6ff;border:1px solid #d6e5ff;color:#2c4d84;padding:12px 14px;border-radius:10px;font-size:12px;margin-bottom:16px}.toast{position:fixed;bottom:22px;right:22px;background:#172238;color:#fff;padding:12px 16px;border-radius:10px;box-shadow:var(--shadow);z-index:50;opacity:0;transform:translateY(8px);pointer-events:none;transition:.2s}.toast.show{opacity:1;transform:translateY(0)}.hidden{display:none!important}.checkbox{display:flex;gap:8px;align-items:center;font-size:12px;color:#455166}.checkbox input{accent-color:var(--accent)}.divider{height:1px;background:var(--line);margin:18px 0}.print-sheet{display:none}
+@media(max-width:1000px){.app{grid-template-columns:76px minmax(0,1fr)}.sidebar{padding:20px 10px}.brand{justify-content:center;padding:0}.brand-text,.nav-label,.nav button span:not(.ico),.side-bottom{display:none}.nav button{justify-content:center;padding:12px 6px}.content{padding:22px 18px}.topbar{padding:0 18px}.split{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:650px){.app{display:block}.sidebar{display:none}.topbar{height:68px}.content{padding:14px}.hero{padding:21px}.hero h2{font-size:22px}.hero-logo{width:64px;height:64px}.stats{gap:9px}.stat{padding:14px}.stat-value{font-size:22px}.setting-grid,.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.panel{padding:14px}.top-actions .btn{padding:8px}.toolbar{width:100%}.toolbar input{flex:1;min-width:140px}}
+/* Printing is deliberately separate from the application layout. */
+@media print{
+  @page{size:A4 portrait;margin:0}
+  html,body{margin:0!important;padding:0!important;background:#fff!important;width:auto!important;height:auto!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body *{visibility:hidden!important}
+  #printRoot,#printRoot *{visibility:visible!important}
+  #printRoot{display:block!important;position:absolute;left:0;top:0;width:210mm;margin:0;padding:0;background:#fff}
+  .print-sheet{display:flex!important;flex-direction:column;width:210mm;height:297mm;page-break-after:always;break-after:page;overflow:hidden;background:#fff}
+  .print-sheet:last-child{page-break-after:auto;break-after:auto}
+  .print-label{width:210mm;height:148.5mm;flex:0 0 148.5mm;overflow:hidden;position:relative;padding:7mm 9mm;border:0.15mm dashed #b8b8b8;background:#fff;color:#111;font-family:Arial,Helvetica,sans-serif;display:flex;flex-direction:column}
+  .print-label .label-top{padding-bottom:3mm;margin-bottom:3mm;border-bottom:0.6mm solid #111;gap:5mm;min-height:22mm}
+  .print-label .label-logo{width:30mm;height:19mm}
+  .print-label .sender{font-size:8pt;max-width:105mm}
+  .print-label .ship-to{font-size:8pt;margin-bottom:1.5mm}
+  .print-label .recipient{font-size:24pt;line-height:1.08}
+  .print-label .address{font-size:13pt;line-height:1.25;margin-top:2mm;max-width:180mm}
+  .print-label .cityline{font-size:17pt;margin-top:2mm}
+  .print-label .pin{font-size:25pt;margin-top:1mm}
+  .print-label .label-meta{margin-top:3mm;gap:2mm}
+  .print-label .meta-chip{font-size:8pt;padding:1.2mm 2mm;border:0.25mm solid #aaa}
+  .print-label .label-note{font-size:8pt;margin-top:3mm;padding-top:2mm}
+  .print-label .barcode{height:10mm;margin-top:3mm;gap:.5mm}
+  .print-label .barcode-caption{font-size:7pt;margin-top:1mm}
+  .print-label .label-footer{font-size:7pt;margin-top:auto;padding-top:2mm}
+  body.print-thermal #printRoot{width:100mm}
+  body.print-thermal .print-sheet{width:100mm;height:150mm;display:block!important;page-break-after:always;break-after:page}
+  body.print-thermal .print-label{width:100mm;height:150mm;padding:5mm;border:.2mm dashed #bbb;flex:none}
+  body.print-thermal .print-label .label-top{padding-bottom:3mm;margin-bottom:3mm;min-height:0}
+  body.print-thermal .print-label .label-logo{width:20mm;height:14mm}
+  body.print-thermal .print-label .recipient{font-size:17pt}
+  body.print-thermal .print-label .address{font-size:10pt}
+  body.print-thermal .print-label .cityline{font-size:13pt}
+  body.print-thermal .print-label .pin{font-size:19pt}
+  body.print-thermal .print-label .label-footer{margin-top:auto}
+}
+</style>
+</head>
+<body>
+<div class="app" id="app">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark" id="sidebarLogo"><span class="fallback">P</span></div><div class="brand-text"><div class="brand-name">Parcel Studio</div><div class="brand-sub">Shipping workspace</div></div></div>
+    <div><div class="nav-label">Workspace</div><nav class="nav">
+      <button class="active" data-view="overview"><span class="ico">▦</span><span>Overview</span></button>
+      <button data-view="orders"><span class="ico">▤</span><span>Orders & labels</span></button>
+      <button data-view="studio"><span class="ico">▧</span><span>Label studio</span></button>
+      <button data-view="import"><span class="ico">⇧</span><span>Bulk import</span></button>
+      <button data-view="print"><span class="ico">▣</span><span>Print center</span></button>
+    </nav></div>
+    <div><div class="nav-label">Manage</div><nav class="nav"><button data-view="settings"><span class="ico">⚙</span><span>Settings</span></button></nav></div>
+    <div class="side-bottom">Local-first workspace<br>Orders stay in this browser.</div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><div class="crumb">WORKSPACE / <span id="crumb">OVERVIEW</span></div><h1 id="pageTitle">Overview</h1></div><div class="top-actions"><button class="btn" id="exportTop">↓ Export CSV</button><button class="btn primary" id="newTop">＋ New label</button><div class="avatar">P</div></div></header>
+    <div class="content">
+      <section class="view active" id="view-overview">
+        <div class="hero"><div class="hero-copy"><div class="eyebrow">YOUR SHIPPING DESK</div><h2>Every parcel, ready to go.</h2><p>Create clean address labels, organise orders, and print using your regular printer or thermal label printer.</p><div class="row" style="margin-top:20px"><button class="btn" id="heroNew">＋ Create a label</button><button class="btn" id="heroPrint">Open print center →</button></div></div><div class="hero-logo" id="heroLogo"><span class="fallback">P</span></div></div>
+        <div class="stats">
+          <div class="stat"><div class="stat-label">Total orders</div><div class="stat-value" id="statTotal">0</div><div class="stat-note">Saved in this browser</div></div>
+          <div class="stat"><div class="stat-label">COD orders</div><div class="stat-value" id="statCOD">0</div><div class="stat-note">Cash on delivery</div></div>
+          <div class="stat"><div class="stat-label">Prepaid orders</div><div class="stat-value" id="statPrepaid">0</div><div class="stat-note">Payment received</div></div>
+          <div class="stat"><div class="stat-label">Ready to print</div><div class="stat-value" id="statReady">0</div><div class="stat-note">All saved orders</div></div>
+        </div>
+        <div class="panel"><div class="panel-head"><div><h3 class="section-title">Recent orders</h3><div class="subtext">Your latest shipping labels</div></div><button class="btn" data-go="orders">View all orders →</button></div><div class="table-wrap"><table><thead><tr><th>Recipient</th><th>Order ref</th><th>Destination</th><th>Payment</th><th>Actions</th></tr></thead><tbody id="recentRows"></tbody></table></div></div>
+      </section>
+      <section class="view" id="view-orders">
+        <div class="row between" style="margin-bottom:18px"><div><h2 class="section-title">Orders & labels</h2><div class="subtext">Create, edit, select, and print recipient labels.</div></div><div class="row"><button class="btn" id="selectAll">Select all</button><button class="btn primary" id="addOrder">＋ New order</button></div></div>
+        <div class="panel"><div class="panel-head"><div class="toolbar"><input id="searchOrders" placeholder="Search name, PIN, order ref…" /><select id="filterPayment"><option value="">All payment types</option><option>COD</option><option>Prepaid</option></select></div><div class="toolbar"><button class="btn" id="exportOrders">↓ CSV</button><button class="btn" id="printSelected">Print selected</button></div></div><div class="table-wrap"><table><thead><tr><th></th><th>Recipient</th><th>Order ref</th><th>Destination</th><th>Payment</th><th>COD amount</th><th>Actions</th></tr></thead><tbody id="orderRows"></tbody></table></div><div class="subtext" id="selectedCount" style="margin-top:14px">0 orders selected</div></div>
+      </section>
+      <section class="view" id="view-studio">
+        <div style="margin-bottom:18px"><h2 class="section-title">Label studio</h2><div class="subtext">Edit an order and preview the shipping label before printing.</div></div>
+        <div class="split"><div class="panel"><div class="panel-head"><h3 class="section-title" id="formHeading">New shipping label</h3><button class="btn small" id="clearForm">Clear</button></div><form id="orderForm"><input type="hidden" id="orderId"><div class="form-grid">
+          <div class="field"><label for="customer">RECIPIENT NAME *</label><input id="customer" required placeholder="e.g. Ayesha Khan"></div>
+          <div class="field"><label for="phone">PHONE NUMBER</label><input id="phone" placeholder="+91 98765 43210"></div>
+          <div class="field"><label for="ref">ORDER REFERENCE</label><input id="ref" placeholder="ORD-1001"></div>
+          <div class="field"><label for="payment">PAYMENT TYPE</label><select id="payment"><option>Prepaid</option><option>COD</option></select></div>
+          <div class="field"><label for="cod">COD AMOUNT (₹)</label><input id="cod" type="number" min="0" step="0.01" placeholder="0"></div>
+          <div class="field"><label for="weight">WEIGHT (KG)</label><input id="weight" type="number" min="0" step=".01" placeholder="0.5"></div>
+          <div class="field full"><label for="address">STREET ADDRESS *</label><textarea id="address" required placeholder="House / flat, street, area, landmark"></textarea></div>
+          <div class="field"><label for="city">CITY *</label><input id="city" required placeholder="Upleta"></div>
+          <div class="field"><label for="state">STATE</label><input id="state" placeholder="Gujarat"></div>
+          <div class="field"><label for="pin">PIN CODE *</label><input id="pin" required inputmode="numeric" placeholder="360490" maxlength="10"></div>
+          <div class="field"><label for="note">LABEL NOTE</label><input id="note" placeholder="Handle with care"></div>
+          <div class="field full"><label for="sender">SENDER / RETURN ADDRESS</label><textarea id="sender" placeholder="Business name&#10;Street, city, PIN"></textarea></div>
+        </div><div class="row" style="margin-top:18px"><button class="btn primary" type="submit">Save label</button><button class="btn" type="button" id="savePrint">Save & print</button></div></form></div>
+        <div class="panel"><div class="panel-head"><div><h3 class="section-title">Live preview</h3><div class="subtext">Approximate on-screen size</div></div><select id="previewSize" style="padding:8px;border:1px solid #dce2ea;border-radius:8px"><option value="a5">A5 label</option><option value="thermal">100 × 150 mm</option></select></div><div class="label-preview-area"><div class="label" id="previewLabel"></div></div><div class="hint" style="margin-top:12px">Preview uses your saved logo and current label settings. The print version is laid out separately for accurate paper sizing.</div></div></div>
+      </section>
+      <section class="view" id="view-import">
+        <div style="margin-bottom:18px"><h2 class="section-title">Bulk import</h2><div class="subtext">Import many orders from a CSV spreadsheet or export a backup.</div></div>
+        <div class="setting-grid"><div class="panel"><h3 class="section-title">Import orders from CSV</h3><p class="subtext">Use the sample file as a guide. Required columns: customer, address, city, pin.</p><div class="divider"></div><div class="field"><label>CHOOSE CSV FILE</label><input type="file" id="csvFile" accept=".csv,text/csv"></div><div class="row" style="margin-top:14px"><button class="btn primary" id="importCSV">Import CSV</button><button class="btn" id="sampleCSV">Download sample</button></div><p class="hint" id="importMsg"></p></div>
+        <div class="panel"><h3 class="section-title">Backup & restore</h3><p class="subtext">Download your orders and settings as a JSON backup.</p><div class="divider"></div><div class="row"><button class="btn primary" id="backupJSON">Download backup</button><label class="btn">Restore backup<input type="file" id="restoreJSON" accept=".json,application/json" hidden></label></div><p class="hint">Keep a backup before clearing browser data. Data is stored locally in this browser and is not automatically synced to another device.</p></div></div>
+      </section>
+      <section class="view" id="view-print">
+        <div style="margin-bottom:18px"><h2 class="section-title">Print center</h2><div class="subtext">Choose a paper format. Only labels will be printed; the dashboard and controls are excluded.</div></div>
+        <div class="notice"><b>A5 on A4:</b> each label is 148.5 × 210 mm. Two labels are arranged side by side on A4 landscape paper, so you can cut the sheet in half. In the print dialog, select A4 and Landscape.</div>
+        <div class="setting-grid"><div class="panel"><h3 class="section-title">Paper & layout</h3><div class="divider"></div><div class="field"><label for="printMode">PRINTER / PAPER FORMAT</label><select id="printMode"><option value="a5">Regular printer — A4 sheet, 2 A5 labels</option><option value="thermal">Thermal printer — 100 × 150 mm label</option></select></div><div class="field" style="margin-top:14px"><label for="printTemplate">LABEL TEMPLATE</label><select id="printTemplate"><option value="standard">Standard shipping</option><option value="branded">Branded header</option><option value="cod">COD emphasis</option></select></div><div class="divider"></div><label class="checkbox"><input type="checkbox" id="showSender" checked> Show sender / return address</label><label class="checkbox" style="margin-top:10px"><input type="checkbox" id="showBarcode" checked> Show decorative barcode</label><label class="checkbox" style="margin-top:10px"><input type="checkbox" id="showNote" checked> Show label note</label><div class="row" style="margin-top:20px"><button class="btn primary" id="printAll">Print all orders</button><button class="btn" id="printSelected2">Print selected</button></div><p class="hint">Thermal mode prints one label per 100 × 150 mm page. In the browser print dialog, choose the matching custom paper size if it isn't detected automatically.</p></div>
+        <div class="panel"><h3 class="section-title">Print checklist</h3><div class="divider"></div><div class="row" style="align-items:flex-start"><div class="pill">01</div><div><b>Select the correct paper</b><div class="subtext">A4 landscape for two A5 labels, or 100 × 150 mm for thermal.</div></div></div><div class="divider"></div><div class="row" style="align-items:flex-start"><div class="pill">02</div><div><b>Set scale to 100%</b><div class="subtext">Turn off browser headers and footers. Avoid “Fit to page” if it changes the label size.</div></div></div><div class="divider"></div><div class="row" style="align-items:flex-start"><div class="pill">03</div><div><b>Test one sheet first</b><div class="subtext">Check the PIN code, address edges, and printer orientation before printing a batch.</div></div></div></div></div>
+      </section>
+      <section class="view" id="view-settings">
+        <div style="margin-bottom:18px"><h2 class="section-title">Settings</h2><div class="subtext">Brand your labels and configure the sender information.</div></div>
+        <div class="setting-grid"><div class="panel"><h3 class="section-title">Business logo</h3><p class="subtext">Upload a logo file or use assets/logo.png beside index.html.</p><div class="divider"></div><div class="logo-upload"><div class="logo-upload-preview" id="logoPreview"><span class="fallback">P</span></div><div><b id="logoStatus">No custom logo uploaded</b><p class="hint">PNG, JPG, WebP or SVG. A transparent PNG works well for labels.</p><div class="row"><label class="btn primary">Upload logo<input type="file" id="logoFile" accept="image/png,image/jpeg,image/webp,image/svg+xml" hidden></label><button class="btn" id="removeLogo">Remove uploaded logo</button></div></div></div><p class="hint" style="margin-top:12px">If using a file path, place the image at <code>assets/logo.png</code>. File paths are case-sensitive on many hosting services such as GitHub Pages.</p></div>
+        <div class="panel"><h3 class="section-title">Label appearance</h3><p class="subtext">Small customisations for your printed labels.</p><div class="divider"></div><div class="field"><label for="businessName">BUSINESS NAME</label><input id="businessName" placeholder="Your business name"></div><div class="field" style="margin-top:12px"><label for="accent">ACCENT COLOR</label><input id="accent" type="color" value="#2563eb" style="height:42px;padding:4px"></div><div class="field" style="margin-top:12px"><label for="fontScale">ADDRESS FONT SIZE</label><select id="fontScale"><option value="small">Compact</option><option value="normal" selected>Normal</option><option value="large">Large</option></select></div><div class="row" style="margin-top:16px"><button class="btn primary" id="saveSettings">Save settings</button><button class="btn" id="resetSettings">Reset appearance</button></div></div></div>
+        <div class="panel" style="margin-top:16px"><h3 class="section-title">Default sender address</h3><p class="subtext">This address is used on new labels when the sender field is empty.</p><div class="divider"></div><div class="field"><label for="defaultSender">SENDER / RETURN ADDRESS</label><textarea id="defaultSender" placeholder="Business name&#10;Street, city, state, PIN"></textarea></div><button class="btn primary" id="saveSender" style="margin-top:12px">Save sender address</button></div>
+      </section>
+    </div>
+  </main>
+</div>
+<div id="printRoot" aria-hidden="true"></div>
+<div class="toast" id="toast"></div>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const STORE='parcelStudioOrders_v3', SETTINGS='parcelStudioSettings_v3';
+  let orders = readJSON(STORE, []), settings = readJSON(SETTINGS, {logoData:'',businessName:'',accent:'#2563eb',fontScale:'normal',sender:'',showSender:true,showBarcode:false,showNote:true,template:'standard'});
+  let selected = new Set(), fallbackLogoTried=false;
+  const pageNames={overview:'Overview',orders:'Orders & labels',studio:'Label studio',import:'Bulk import',print:'Print center',settings:'Settings'};
+  function readJSON(k,f){try{const v=JSON.parse(localStorage.getItem(k));return v??f}catch{return f}}
+  function saveOrders(){localStorage.setItem(STORE,JSON.stringify(orders));renderAll()}
+  function saveSettings(){localStorage.setItem(SETTINGS,JSON.stringify(settings));renderLogo();renderPreview();renderAll()}
+  function esc(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+  function toast(msg){const t=$('toast');t.textContent=msg;t.classList.add('show');clearTimeout(toast.timer);toast.timer=setTimeout(()=>t.classList.remove('show'),2600)}
+  function initials(){const s=(settings.businessName||'Parcel Studio').trim();return s.split(/\s+/).slice(0,2).map(x=>x[0]||'').join('').toUpperCase()||'P'}
+  function logoMarkup(cls=''){const src=settings.logoData||'assets/logo.png';return `<div class="${cls}">${src?`<img src="${esc(src)}" alt="Business logo" onerror="this.remove();this.parentNode.innerHTML='<span class=&quot;fallback&quot;>${esc(initials())}</span>'">`:''}</div>`}
+  function setLogoInto(el){if(!el)return;el.innerHTML='';const src=settings.logoData||'assets/logo.png';const img=document.createElement('img');img.alt='Business logo';img.src=src;img.onerror=()=>{el.innerHTML=`<span class="fallback">${esc(initials())}</span>`;if(!settings.logoData)el.title='Logo not found. Upload one in Settings or add assets/logo.png.'};el.appendChild(img)}
+  function renderLogo(){setLogoInto($('sidebarLogo'));setLogoInto($('heroLogo'));setLogoInto($('logoPreview'));$('logoStatus').textContent=settings.logoData?'Custom logo saved in this browser':'Using assets/logo.png if available, otherwise initials';document.documentElement.style.setProperty('--accent',settings.accent||'#2563eb')}
+  function showView(name){document.querySelectorAll('.view').forEach(v=>v.classList.toggle('active',v.id==='view-'+name));document.querySelectorAll('.nav button').forEach(b=>b.classList.toggle('active',b.dataset.view===name));$('pageTitle').textContent=pageNames[name]||name;$('crumb').textContent=(name||'overview').toUpperCase();if(name==='studio')renderPreview();if(name==='settings')fillSettings()}
+  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.view)));
+  document.querySelectorAll('[data-go]').forEach(b=>b.addEventListener('click',()=>showView(b.dataset.go)));
+  $('newTop').onclick=$('heroNew').onclick=$('addOrder').onclick=()=>newOrder();
+  $('heroPrint').onclick=()=>showView('print');
+  $('exportTop').onclick=$('exportOrders').onclick=exportCSV;
+  function newOrder(){ $('orderForm').reset();$('orderId').value='';$('formHeading').textContent='New shipping label';$('sender').value=settings.sender||'';$('payment').value='Prepaid';showView('studio');renderPreview()}
+  function formObj(){return {id:$('orderId').value||('ord_'+Date.now()+'_'+Math.random().toString(36).slice(2,7)),customer:$('customer').value.trim(),phone:$('phone').value.trim(),ref:$('ref').value.trim(),payment:$('payment').value,cod:$('cod').value.trim(),weight:$('weight').value.trim(),address:$('address').value.trim(),city:$('city').value.trim(),state:$('state').value.trim(),pin:$('pin').value.trim(),note:$('note').value.trim(),sender:$('sender').value.trim()||settings.sender||'',createdAt:new Date().toISOString()}}
+  function fillForm(o){$('orderId').value=o.id;$('customer').value=o.customer||'';$('phone').value=o.phone||'';$('ref').value=o.ref||'';$('payment').value=o.payment||'Prepaid';$('cod').value=o.cod||'';$('weight').value=o.weight||'';$('address').value=o.address||'';$('city').value=o.city||'';$('state').value=o.state||'';$('pin').value=o.pin||'';$('note').value=o.note||'';$('sender').value=o.sender||settings.sender||'';$('formHeading').textContent='Edit shipping label';showView('studio');renderPreview()}
+  $('orderForm').addEventListener('submit',e=>{e.preventDefault();const o=formObj();const idx=orders.findIndex(x=>x.id===o.id);if(idx>=0)orders[idx]={...orders[idx],...o};else orders.unshift(o);saveOrders();$('orderId').value=o.id;$('formHeading').textContent='Label saved';toast('Label saved');renderPreview()});
+  $('clearForm').onclick=()=>newOrder();
+  $('savePrint').onclick=()=>{if(!$('orderForm').reportValidity())return;const o=formObj();const idx=orders.findIndex(x=>x.id===o.id);if(idx>=0)orders[idx]={...orders[idx],...o};else orders.unshift(o);saveOrders();$('orderId').value=o.id;printOrders([o],$('printMode').value||'a5')};
+  function labelHTML(o,print=false){
+    const senderVisible=$('showSender')? $('showSender').checked:settings.showSender;
+    const barcodeVisible=$('showBarcode')? $('showBarcode').checked:settings.showBarcode;
+    const noteVisible=$('showNote')? $('showNote').checked:settings.showNote;
+    const template=$('printTemplate')?.value||settings.template||'standard';
+    const name=settings.businessName||'';
+    const logoSrc=settings.logoData||'assets/logo.png';
+    const location=[o.city,o.state].filter(Boolean).join(', ');
+    const cod=o.payment==='COD';
+    const size=settings.fontScale==='large'?'large':settings.fontScale==='small'?'small':'normal';
+    let bars='';
+    const code=(o.ref||o.pin||o.id||'').replace(/[^A-Za-z0-9]/g,'');
+    if(barcodeVisible && code){for(let i=0;i<65;i++){let n=(code.charCodeAt(i%code.length)*(i+13)+i*7)%5+1;bars+=`<span style="width:${n/2}px;opacity:${i%7===0?.65:1}"></span>`}}
+    const sender=o.sender||settings.sender||name;
+    const hasSender=senderVisible&&sender.trim();
+    return `<div class="label ${print?'print-label':''}" style="${size==='large'?'--dummy:1':size==='small'?'--dummy:0.8':''}">
+      <div class="label-top"><div class="label-logo"><img src="${esc(logoSrc)}" alt="Logo" onerror="this.style.display='none';this.nextElementSibling.style.display='block'"><span class="fallback" style="display:none">${esc(initials())}</span></div><div class="sender">${hasSender?esc(sender).replace(/\n/g,'<br>'):''}</div></div>
+      <div class="ship-to">${template==='branded'?'DELIVERY FOR':'SHIP TO'}</div>
+      ${o.customer?`<div class="recipient">${esc(o.customer)}</div>`:''}
+      ${o.phone?`<div class="recipient-phone">☎ ${esc(o.phone)}</div>`:''}
+      ${o.address?`<div class="address">${esc(o.address)}</div>`:''}
+      ${location?`<div class="cityline">${esc(location)}</div>`:''}
+      ${o.pin?`<div class="pin">${esc(o.pin)}</div>`:''}
+      ${(o.payment||o.ref||o.weight||cod)?`<div class="label-meta">${o.payment?`<span class="meta-chip ${cod?'cod-chip':''}">${cod?'CASH ON DELIVERY':'PREPAID'}</span>`:''}${cod?`<span class="meta-chip ${template==='cod'?'cod-strong':''}">COLLECT ₹${esc(o.cod||'0')}</span>`:''}${o.weight?`<span class="meta-chip">${esc(o.weight)} kg</span>`:''}${o.ref?`<span class="meta-chip">ORDER ${esc(o.ref)}</span>`:''}</div>`:''}
+      ${noteVisible&&o.note?`<div class="label-note"><b>NOTE:</b> ${esc(o.note)}</div>`:''}
+      ${barcodeVisible&&code?`<div class="barcode" aria-label="Decorative barcode">${bars}</div><div class="barcode-caption">${esc(code)}</div>`:''}
+      <div class="label-footer"><span>${esc(name)}</span><span>${cod?'COD':'SHIPMENT'}</span></div>
+    </div>`;
+  }
+  function renderPreview(){if(!$('previewLabel'))return;const o=formObj();$('previewLabel').outerHTML=labelHTML(o,false).replace('class="label ','id="previewLabel" class="label ');const p=$('previewLabel');if(p){p.style.maxWidth=$('previewSize').value==='thermal'?'270px':'420px';p.style.fontSize=settings.fontScale==='large'?'1.08em':settings.fontScale==='small'?'.9em':'1em'}}
+  ['customer','phone','ref','payment','cod','weight','address','city','state','pin','note','sender'].forEach(id=>$(id).addEventListener('input',renderPreview));
+  $('previewSize').onchange=renderPreview;
+  function rowHTML(o,checkbox=true){return `<tr>${checkbox?`<td><input type="checkbox" data-select="${esc(o.id)}" ${selected.has(o.id)?'checked':''} aria-label="Select order"></td>`:''}<td><b>${esc(o.customer)}</b><div class="subtext">${esc(o.phone||'No phone')}</div></td><td>${esc(o.ref||'—')}</td><td>${esc([o.city,o.state,o.pin].filter(Boolean).join(', '))}</td><td><span class="pill ${o.payment==='COD'?'cod':'prepaid'}">${esc(o.payment||'Prepaid')}</span></td><td>${o.payment==='COD'?'₹'+esc(o.cod||'0'):'—'}</td><td><div class="row"><button class="btn small" data-edit="${esc(o.id)}">Edit</button><button class="btn small" data-oneprint="${esc(o.id)}">Print</button><button class="btn small danger" data-delete="${esc(o.id)}">Delete</button></div></td></tr>`}
+  function renderOrders(){const q=($('searchOrders')?.value||'').toLowerCase();const pay=$('filterPayment')?.value||'';const filtered=orders.filter(o=>(!pay||o.payment===pay)&&[o.customer,o.phone,o.ref,o.address,o.city,o.state,o.pin].some(x=>String(x||'').toLowerCase().includes(q)));$('orderRows').innerHTML=filtered.length?filtered.map(o=>rowHTML(o)).join(''):`<tr><td colspan="7"><div class="empty">No orders found. Create a label or import a CSV.</div></td></tr>`;$('recentRows').innerHTML=orders.slice(0,5).length?orders.slice(0,5).map(o=>rowHTML(o,false).replace(/<td>₹.*?<\/td>/,'')).join(''):`<tr><td colspan="5"><div class="empty">No orders yet.</div></td></tr>`;$('selectedCount').textContent=`${selected.size} order${selected.size===1?'':'s'} selected`;$('statTotal').textContent=orders.length;$('statCOD').textContent=orders.filter(o=>o.payment==='COD').length;$('statPrepaid').textContent=orders.filter(o=>o.payment!=='COD').length;$('statReady').textContent=orders.length;document.querySelectorAll('[data-select]').forEach(el=>el.addEventListener('change',()=>{if(el.checked)selected.add(el.dataset.select);else selected.delete(el.dataset.select);$('selectedCount').textContent=`${selected.size} order${selected.size===1?'':'s'} selected`}));document.querySelectorAll('[data-edit]').forEach(el=>el.addEventListener('click',()=>{const o=orders.find(x=>x.id===el.dataset.edit);if(o)fillForm(o)}));document.querySelectorAll('[data-oneprint]').forEach(el=>el.addEventListener('click',()=>{const o=orders.find(x=>x.id===el.dataset.oneprint);if(o)printOrders([o],$('printMode').value||'a5')}));document.querySelectorAll('[data-delete]').forEach(el=>el.addEventListener('click',()=>{if(confirm('Delete this order?')){orders=orders.filter(x=>x.id!==el.dataset.delete);selected.delete(el.dataset.delete);saveOrders();toast('Order deleted')}}))}
+  function renderAll(){renderOrders();renderLogo();renderPreview()}
+  $('searchOrders').addEventListener('input',renderOrders);$('filterPayment').addEventListener('change',renderOrders);
+  $('selectAll').onclick=()=>{const allVisible=[...document.querySelectorAll('[data-select]')].map(x=>x.dataset.select);if(allVisible.every(id=>selected.has(id)))allVisible.forEach(id=>selected.delete(id));else allVisible.forEach(id=>selected.add(id));renderOrders()};
+  $('printSelected').onclick=$('printSelected2').onclick=()=>{const list=orders.filter(o=>selected.has(o.id));if(!list.length){toast('Select at least one order first');return}printOrders(list,$('printMode').value)};
+  $('printAll').onclick=()=>{if(!orders.length){toast('Create or import an order first');return}printOrders(orders,$('printMode').value)};
+  function printOrders(list,mode){
+    if(!list.length){toast('No labels to print');return}
+    const root=$('printRoot');
+    let dynamic=$('dynamicPrintPage');
+    if(!dynamic){dynamic=document.createElement('style');dynamic.id='dynamicPrintPage';document.head.appendChild(dynamic)}
+    document.body.classList.toggle('print-thermal',mode==='thermal');
+    dynamic.textContent=mode==='thermal'?'@media print{@page{size:100mm 150mm;margin:0}}':'@media print{@page{size:A4 portrait;margin:0}}';
+    root.innerHTML='';
+    if(mode==='thermal'){
+      list.forEach(o=>{const sheet=document.createElement('div');sheet.className='print-sheet';sheet.innerHTML=labelHTML(o,true);root.appendChild(sheet)});
+    }else{
+      for(let i=0;i<list.length;i+=2){
+        const sheet=document.createElement('div');sheet.className='print-sheet';
+        sheet.innerHTML=labelHTML(list[i],true)+(list[i+1]?labelHTML(list[i+1],true):'');
+        root.appendChild(sheet);
+      }
+    }
+    const cleanup=()=>{document.body.classList.remove('print-thermal');root.innerHTML='';dynamic.textContent='';window.removeEventListener('afterprint',cleanup)};
+    window.addEventListener('afterprint',cleanup);
+    const imgs=[...root.querySelectorAll('img')];
+    Promise.all(imgs.map(img=>img.complete?Promise.resolve():new Promise(resolve=>{img.onload=resolve;img.onerror=resolve;setTimeout(resolve,1800)}))).then(()=>setTimeout(()=>window.print(),100));
+  }
+  function csvEscape(v){const s=String(v??'');return /[",\n\r]/.test(s)?'"'+s.replace(/"/g,'""')+'"':s}
+  const csvCols=['customer','phone','ref','payment','cod','weight','address','city','state','pin','note','sender'];
+  function exportCSV(){const rows=[csvCols.join(','),...orders.map(o=>csvCols.map(k=>csvEscape(o[k])).join(','))];downloadBlob(rows.join('\r\n'),'parcel-orders.csv','text/csv;charset=utf-8');toast('CSV exported')}
+  function downloadBlob(content,name,type){const blob=new Blob([content],{type});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+  function parseCSV(text){const rows=[];let row=[],cell='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(quoted){if(c==='"'&&text[i+1]==='"'){cell+='"';i++}else if(c==='"')quoted=false;else cell+=c}else if(c==='"')quoted=true;else if(c===','){row.push(cell);cell=''}else if(c==='\n'){row.push(cell.replace(/\r$/,''));rows.push(row);row=[];cell=''}else cell+=c}if(cell.length||row.length){row.push(cell.replace(/\r$/,''));rows.push(row)}if(!rows.length)return[];const headers=rows.shift().map(h=>h.trim().toLowerCase().replace(/\s+/g,'_'));return rows.filter(r=>r.some(v=>v.trim())).map(r=>Object.fromEntries(headers.map((h,i)=>[h,(r[i]||'').trim()]))).map(o=>({id:'ord_'+Date.now()+'_'+Math.random().toString(36).slice(2,7),customer:o.customer||o.name||o.recipient||'',phone:o.phone||'',ref:o.ref||o.order_ref||o.order_id||'',payment:(o.payment||'Prepaid').toLowerCase()==='cod'?'COD':'Prepaid',cod:o.cod||o.cod_amount||'',weight:o.weight||'',address:o.address||o.street_address||'',city:o.city||'',state:o.state||'',pin:o.pin||o.pincode||o.postal_code||'',note:o.note||'',sender:o.sender||settings.sender||'',createdAt:new Date().toISOString()}))}
+  $('importCSV').onclick=async()=>{const f=$('csvFile').files[0];if(!f){$('importMsg').textContent='Choose a CSV file first.';return}try{const parsed=parseCSV(await f.text());const valid=parsed.filter(o=>o.customer&&o.address&&o.city&&o.pin);orders=[...valid,...orders];saveOrders();$('importMsg').textContent=`Imported ${valid.length} valid order(s). ${parsed.length-valid.length} row(s) skipped because required fields were missing.`;toast('CSV import complete')}catch(e){$('importMsg').textContent='Could not read this CSV. Please check the file format.'}};
+  $('sampleCSV').onclick=()=>{const sample=[csvCols.join(','),['Ayesha Khan','+919876543210','ORD-1001','COD','1299','0.8','12 Green Park, Near Main Road','Upleta','Gujarat','360490','Handle with care','BFM Spices - Upleta, Gujarat'].map(csvEscape).join(',')].join('\r\n');downloadBlob(sample,'parcel-orders-sample.csv','text/csv;charset=utf-8')};
+  $('backupJSON').onclick=()=>downloadBlob(JSON.stringify({orders,settings},null,2),'parcel-studio-backup.json','application/json');
+  $('restoreJSON').onchange=async e=>{const f=e.target.files[0];if(!f)return;try{const data=JSON.parse(await f.text());if(!Array.isArray(data.orders))throw Error('Invalid backup');orders=data.orders;if(data.settings&&typeof data.settings==='object')settings={...settings,...data.settings};saveOrders();saveSettings();toast('Backup restored')}catch{toast('That backup file is not valid')}e.target.value=''};
+  $('logoFile').onchange=async e=>{const f=e.target.files[0];if(!f)return;if(f.size>2*1024*1024){toast('Logo must be under 2 MB');e.target.value='';return}if(!/^image\/(png|jpeg|webp|svg\+xml)$/.test(f.type)){toast('Use PNG, JPG, WebP, or SVG');e.target.value='';return}const reader=new FileReader();reader.onload=()=>{settings.logoData=reader.result;saveSettings();toast('Logo uploaded and saved in this browser')};reader.onerror=()=>toast('Could not read logo file');reader.readAsDataURL(f);e.target.value=''};
+  $('removeLogo').onclick=()=>{settings.logoData='';saveSettings();toast('Uploaded logo removed; checking assets/logo.png')};
+  function fillSettings(){$('businessName').value=settings.businessName||'';$('accent').value=settings.accent||'#2563eb';$('fontScale').value=settings.fontScale||'normal';$('defaultSender').value=settings.sender||'';$('showSender').checked=settings.showSender!==false;$('showBarcode').checked=settings.showBarcode!==false;$('showNote').checked=settings.showNote!==false;$('printTemplate').value=settings.template||'standard'}
+  $('saveSettings').onclick=()=>{settings.businessName=$('businessName').value.trim();settings.accent=$('accent').value;settings.fontScale=$('fontScale').value;settings.template=$('printTemplate').value;settings.showSender=$('showSender').checked;settings.showBarcode=$('showBarcode').checked;settings.showNote=$('showNote').checked;saveSettings();toast('Appearance settings saved')};
+  $('saveSender').onclick=()=>{settings.sender=$('defaultSender').value.trim();saveSettings();toast('Sender address saved')};
+  $('resetSettings').onclick=()=>{settings={...settings,businessName:'',accent:'#2563eb',fontScale:'normal',template:'standard'};saveSettings();fillSettings();toast('Appearance reset')};
+  $('printMode').onchange=()=>{const mode=$('printMode').value;toast(mode==='thermal'?'Thermal mode: use 100 × 150 mm paper':'A4 landscape: two A5 labels per sheet')};
+  $('printTemplate').onchange=()=>{settings.template=$('printTemplate').value;renderPreview()};
+  ['showSender','showBarcode','showNote'].forEach(id=>$(id).addEventListener('change',renderPreview));
+  // Demo order makes the first visit understandable; users can delete it.
+  if(!orders.length){orders=[]}
+  renderLogo();renderAll();fillSettings();
+})();
+</script>
+</body>
+</html>
